@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block header %}
+     {{ super() }}
+{% endblock header %}
+{% block nav %}
+    {{ super() }}
+{% endblock nav %}
+{% block content %}
+<h1>Blog </h1>
+<hr> </hr>
+{% for posts in post %}
+<h1> {{ posts.title }} </h1>
+<h3> Posted by {{ posts.author}} </h5>
+<p> {{ posts.content }} <p>
+{% endfor %}
+{% endblock content %}
+{% block footer %}
+{{ super() }}
+{% endblock footer %}

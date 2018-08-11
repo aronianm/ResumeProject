@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block header %}
+     {{ super() }}
+{% endblock header %}
+{% block nav %}
+    {{ super() }}
+{% endblock nav %}
+{% block content %}
+<h2 class='pagetitle'>Projects</h2>
+<hr> </hr>
+<div class='projects1'>
+<h3>Color Game </h3>
+<h5>Python</h5>
+<object width="300" height="300" data="{{url_for('static', filename='Colorgame.py')}}"></object>
+</div>
+<div class='projects1'>
+<h3>Secret Messages</h3>
+<h5>Python</h5>
+<object width="300" height="300" data="{{url_for('static', filename='secret_messages.py')}}"></object>
+</div>
+<div class='projects2'>
+<h3>League Builder</h3>
+<h5>Python</h5>
+<object width="300" height="300" data="{{url_for('static', filename='league_builder.py')}}"></object>
+</div>
+<div class='projects2'>
+<h3>Work Log </h3>
+<h5> Python, Mysql </h5>
+<object width="300" height="300" data="{{url_for('static', filename='work_log_database.py')}}"></object>
+</div>
+<div>
+{% endblock content %}
+{% block footer %}
+{{ super() }}
+{% endblock footer %}
+</div>

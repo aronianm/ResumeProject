@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block header %}
+     {{ super() }}
+{% endblock header %}
+{% block nav %}
+    {{ super() }}
+{% endblock nav %}
+{% block content %}
+<h2 style="text-align: center;">Uh Ohhhh</h2>
+<div class="four">
+<img src="{{url_for('static', filename='404.png')}}" />
+</div>
+
+
+{% endblock content %}
+{% block footer %}
+{{ super() }}
+{% endblock footer %}

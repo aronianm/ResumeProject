@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block header %}
+     {{ super() }}
+{% endblock header %}
+{% block nav %}
+    {{ super() }}
+{% endblock nav %}
+{% block content %}
+<h2 class='pagetitle'>Posts</h2>
+<hr> </hr>
+<div class="posting">
+<form class='blogform' action="/posts" method="post">
+        <div class='blog_form_content'>
+        <h2 class='blog_form_title'>Blog Post </h2>
+        <h4 class='blog_form_subtitle'>create a post</h4>
+        </div>
+        {{ form.hidden_tag()}}
+        <div class="box">Title: <div class='text'>{{ form.title }}</div> </div><br>
+        <div class="box">Author: <div class='text'>{{ form.author }}</div></div><br>
+        <div class="box">Content: <div class='content'>{{ form.content }}</div></div><br>
+        <div class="box" style="float: right;">{{ form.submit }} </div><br>
+</form>
+</div>
+<div class='messages'>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <li class='message'> {{ message }} </li>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</div>
+{% for posts in post %}
+<h1 class='blog_title'> {{ posts.title }} </h1>
+<div class="blog_content">
+<h3 class='blog_author'> Posted by {{ posts.author}} </h5>
+<h3 class='blog_author'>    {{ posts.dateposted.strftime('%B %d, %Y') }} </h5>
+<p class='blog_writing'> {{ posts.content }} <p>
+</div>
+<hr>
+</div>
+{% endfor %}
+
+{% endblock content %}
+{% block footer %}
+{{ super() }}
+{% endblock footer %}

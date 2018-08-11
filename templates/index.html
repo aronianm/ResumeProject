@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block header %}
+     {{ super() }}
+{% endblock header %}
+{% block nav %}
+    {{ super() }}
+{% endblock nav %}
+{% block content %}
+        <h2 class='pagetitle'>My Personal Wesbite </h2>
+        <h5> Created with: Python, Flask, Jinja2, and SQL </h5>
+    <div class='messages'>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <li> {{ message }} </li>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+<hr> </hr>
+<div class='headshot'>
+    <img id="image" src="{{url_for('static', filename='headshot.jpg')}}" />
+<div class="headshot2">
+    <img  src="{{url_for('static', filename='headshottwo.jpg')}}" />
+</div>
+</div>
+<div class='content'>
+        <p class='writing'>My name is Michael Aronian, I am 26 years old, and studied Mathematics at Salem State University.
+            I am from Boston, Massachusetts and I am pleased to offer my resume for consideration as an employer.
+            Over the last few years I have developed into a highly adaptable and versatile employer with a good
+            sense of humor. I am a team player, but am very self motivated. </p>
+        <p>I currently work as a TA in Bedford Public Schools focusing on behavioral and emotional students.
+            Through this job I have learned a great deal of patience. I have learned to look at the opportunities
+            that have arised in my own life. I was a student growing up that struggled with ADHD. I learned to strive
+            through the adversity. I have also learned the ethics of hard work, and to never give up.</p>
+        <p>What started as a hobby a year and half ago has now turned into a career move. I'm a self-motivated
+            person, and always been eager to learn . My strong multidisciplinary background gives me an advantage
+            to understand problems and apply software techniques to solve them.</p>
+        <p>At the present moment I am eager to find a career in web development with in the greater boston area (Also open to relocate).
+            I'm interested in a position whereby I can apply,learn, grow and use my educational experience to blossom into a Senior
+            Developer.</p>
+        <p>I take pride in everything I do and love to work in problem-solving scenarios; solving challenges in a team
+            setting is my main source of motivation: there is nothing like improving existing solutions, or to come up with new ones.
+            I have learned Python, HTML,CSS, Flask, Jinja2, and MySQL .I love solving technical problems in the technical field.</p>
+        <p> I welcome the opportunity to meet you and discuss how my experience and skills could benefit at your company.
+            Thank you for your time and consideration.</p>
+</div>
+{% endblock content %}
+{% block footer %}
+{{ super() }}
+{% endblock footer %}

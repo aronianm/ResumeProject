@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block header %}
+     {{ super() }}
+{% endblock header %}
+{% block nav %}
+    {{ super() }}
+{% endblock nav %}
+{% block content %}
+<h2 class='pagetitle'>Contact </h2>
+<hr> </hr>
+<div class='contact'>
+<form action="/contact" method="post">
+    <h2 class='blog_form_title'> Contact </h2>
+    <h4>Please fill out </h4>
+    {{ form.hidden_tag() }}
+    <div class='text'>Name: {{ form.name }}</div><br>
+    <div class='text'>Email: {{ form.email }}</div><br>
+    <div class='text' style='margin-right: 8%;'> Comments: {{ form.message }}</div><br>
+    {{ form.submit }}
+</form>
+</div>
+<div class='contactpage'>
+<p> On this page you can send me a comment via email. All you need to do is
+    add an your name, email address and a comment of what you want to say. <br>Thank
+    you very much! </p>
+</div>
+{% endblock content %}
+{% block footer %}
+{{ super() }}
+{% endblock footer %}
